@@ -10,7 +10,7 @@
 [![OSS](https://img.shields.io/badge/OSS-v2-green.svg)](http://developer.autodesk.com/)
 [![Model-Derivative](https://img.shields.io/badge/Model%20Derivative-v2-green.svg)](http://developer.autodesk.com/)
 
-![thumbnail](https://github.com/libvarun/APS-stacks/blob/32311577d8ae5adb46d5f239165fc18cdc52e581/thumbnail.gif)
+![thumbnail](https://raw.githubusercontent.com/autodesk-platform-services/aps-stacks/master/thumbnail.gif)
 
 # Description
 
