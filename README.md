@@ -1,4 +1,4 @@
-# forge-stacks
+# APS-stacks
 
 ![Node.js](https://img.shields.io/badge/node-%3E%3D%2010.0.0-brightgreen.svg)
 ![Platforms](https://img.shields.io/badge/platform-windows%20%7C%20osx%20%7C%20linux-lightgray.svg)
@@ -10,21 +10,21 @@
 [![OSS](https://img.shields.io/badge/OSS-v2-green.svg)](http://developer.autodesk.com/)
 [![Model-Derivative](https://img.shields.io/badge/Model%20Derivative-v2-green.svg)](http://developer.autodesk.com/)
 
-![thumbnail](https://github.com/libvarun/forge-stacks/blob/32311577d8ae5adb46d5f239165fc18cdc52e581/thumbnail.gif)
+![thumbnail](https://github.com/libvarun/APS-stacks/blob/32311577d8ae5adb46d5f239165fc18cdc52e581/thumbnail.gif)
 
 # Description
 
-This is a experimental project with the idea of adding forge viewer and related UI components dynamically into the webpage.
-Under the hood it uses [gridstack](https://gridstackjs.com/) our other sample https://github.com/cyrillef/node-red-node-forge uses UI components to simulate forge APIs, this sample is to simulate new UI components on a model.
+This is a experimental project with the idea of adding APS viewer and related UI components dynamically into the webpage.
+Under the hood it uses [gridstack](https://gridstackjs.com/) our other sample https://github.com/cyrillef/node-red-node-APS uses UI components to simulate APS APIs, this sample is to simulate new UI components on a model.
 
 # How it works
 
-This sample is built on top of our basic [learnforge](https://learnforge.autodesk.io). Unique thing about this poject is mostly in [ForgeGridStack.js](https://github.com/libvarun/forge-stacks/blob/master/public/js/ForgeGridStack.js).
+This sample is built on top of our basic [APS Tutorial](https://tutorials.autodesk.io). Unique thing about this poject is mostly in [GridStack.js](https://github.com/libvarun/APS-stacks/blob/master/public/js/GridStack.js).
 Each stack has it's own array, which consists of basic data like default URN, defaut property, associated functions etc.
 
 # Setup
 
-To use this sample, you will need Autodesk developer credentials. Visit the [Forge Developer Portal](https://developer.autodesk.com), sign up for an account, then [create an app](https://developer.autodesk.com/myapps/create). For this new app, use **http://localhost:3000/api/forge/callback/oauth** as the Callback URL, although it is not used on a 2-legged flow. Finally, take note of the **Client ID** and **Client Secret**.
+To use this sample, you will need Autodesk developer credentials. Visit the [APS Developer Portal](https://aps.autodesk.com), sign up for an account, then [create an app](https://aps.autodesk.com/myapps/create). For this new app, use **http://localhost:3000/api/aps/callback/oauth** as the Callback URL, although it is not used on a 2-legged flow. Finally, take note of the **Client ID** and **Client Secret**.
 
 ### Run locally
 
@@ -32,30 +32,30 @@ Install [NodeJS](https://nodejs.org).
 
 Clone this project or download it. It's recommended to install [GitHub Desktop](https://desktop.github.com/). To clone it via command line, use the following (**Terminal** on MacOSX/Linux, **Git Shell** on Windows):
 
-    git clone https://github.com/libvarun/forge-stacks.git
-    git checkout nodejs
+    git clone https://github.com/libvarun/APS-stacks.git
+    
 
-To run it, install the required packages, set the enviroment variables with your client ID & Secret and finally start it. Via command line, navigate to the folder where this repository was cloned to and use the following commands:
+To run it, have the urn ready and replace it in [GridStack.js](https://github.com/libvarun/APS-stacks/blob/master/public/js/GridStack.js#L5), install the required packages, set the enviroment variables with your client ID & Secret and finally start it. Via command line, navigate to the folder where this repository was cloned to and use the following commands:
 
 Mac OSX/Linux (Terminal)
 
     npm install
-    export FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
-    export FORGE_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
+    export APS_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
+    export APS_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
     npm start
 
 Windows (use **Node.js command line** from the Start menu)
 
     npm install
-    set FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
-    set FORGE_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
+    set APS_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
+    set APS_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
     npm start
 
 Open the browser: [http://localhost:3000](http://localhost:3000).
 
 ## Packages used
 
-The [Autodesk Forge](https://www.npmjs.com/package/forge-apis) packages are included by default. Some other non-Autodesk packages are used, including [express](https://www.npmjs.com/package/express) and [multer](https://www.npmjs.com/package/multer) for upload.
+The [Autodesk APS](https://www.npmjs.com/package/APS-apis) packages are included by default. Some other non-Autodesk packages are used, including [express](https://www.npmjs.com/package/express) and [multer](https://www.npmjs.com/package/multer) for upload.
 
 # Tips & tricks
 
@@ -82,4 +82,4 @@ Please see the [LICENSE](LICENSE) file for full details.
 
 ## Written by
 
-Varun Patil [@varunpatil578](https://twitter.com/varunpatil578), [Forge Partner Development](http://forge.autodesk.com)
+Varun Patil [@varunpatil578](https://twitter.com/varunpatil578), [APS Partner Development](http://APS.autodesk.com)

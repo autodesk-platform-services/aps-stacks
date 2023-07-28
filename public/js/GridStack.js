@@ -1,8 +1,10 @@
 $(document).ready(function () {
 
-let ForgeStacks = [
+let APSStacks = [
     {type:'viewer',node: {x: 0,y: 0,w: 8,h: 5},    
-    function:'launchViewer',arguments:{urn:'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Zm9yZ2Utc3RhY2tzL0NhciUyMFNlYXQuZHdm'}},
+    // function:'launchViewer',arguments:{urn:'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Zm9yZ2Utc3RhY2tzL0NhciUyMFNlYXQuZHdm'}},
+    // function:'launchViewer',arguments:{urn:'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Zm9yZ2Utc3RhY2tzLzIxMCUyMEtpbmclMjBPZmZpY2UucnZ0'}},
+    function:'launchViewer',arguments:{urn:'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Zm9yZ2Utc3RhY2tzL09mZmljZS5ydnQ'}},
     
     {type:'piechart',node: {w: 3,h: 3},
     function:'drawPieChart',arguments:{defaultproperty:'Material'}},
@@ -17,8 +19,8 @@ $(".addwidget").click(function(){
   });
 
   function getInfoBYType(type) {
-      for (let index = 0; index < ForgeStacks.length; index++) {
-        if(ForgeStacks[index].type === type) return ForgeStacks[index];          
+      for (let index = 0; index < APSStacks.length; index++) {
+        if(APSStacks[index].type === type) return APSStacks[index];          
       }
   }
     let options = { // put in gridstack options here
@@ -38,8 +40,8 @@ let uniqueid;
       uniqueid = UUID.generate()
       switch (info.type) {
           case 'viewer':
-            info.arguments.container = uniqueid+'forgeViewer';
-            return '<div id="'+uniqueid+'forgeViewer"></div>';
+            info.arguments.container = uniqueid+'APSViewer';
+            return '<div id="'+uniqueid+'APSViewer"></div>';
           case 'piechart':
           case 'barchart':
             info.arguments.selectchart = uniqueid+'selectchart';
