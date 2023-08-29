@@ -1,17 +1,13 @@
-$(document).ready(function () {
+$(document).ready(async function () {
 
-let APSStacks = [
-    {type:'viewer',node: {x: 0,y: 0,w: 8,h: 5},    
-    // function:'launchViewer',arguments:{urn:'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Zm9yZ2Utc3RhY2tzL0NhciUyMFNlYXQuZHdm'}},
-    // function:'launchViewer',arguments:{urn:'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Zm9yZ2Utc3RhY2tzLzIxMCUyMEtpbmclMjBPZmZpY2UucnZ0'}},
-    function:'launchViewer',arguments:{urn:'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Zm9yZ2Utc3RhY2tzL09mZmljZS5ydnQ'}},
-    
-    {type:'piechart',node: {w: 3,h: 3},
-    function:'drawPieChart',arguments:{defaultproperty:'Material'}},
-    
-    {type:'barchart',node: {w: 3,h: 3},
-    function:'drawBarChart',arguments:{defaultproperty:'Material'}}
-]
+let res = await fetch('js/stacks.json')
+let obj = await res.json()
+let APSStacks = obj.stacks
+let stacksmenu = ''
+for (const stack of APSStacks) {
+  stacksmenu+=`<a data-type="${stack.type}" class="dropdown-item addwidget" href="#">${stack.displayname}</a>`
+}
+$('.dropdown-menu').html(stacksmenu)
 $(".addwidget").click(function(){
     let info = getInfoBYType($(this).attr('data-type'));
     console.log(info)
@@ -47,8 +43,13 @@ let uniqueid;
             info.arguments.selectchart = uniqueid+'selectchart';
             info.arguments.dashboard = uniqueid+'dashboard';
             return '<div id="'+uniqueid+'selectchart"></div><div id="'+uniqueid+'dashboard"></div>';
+          case 'BoilerPlate':
+            info.arguments.selectchart = uniqueid+'selectchart';
+            info.arguments.dashboard = uniqueid+'dashboard';
+            return '<div id="'+uniqueid+'selectchart"></div><div id="'+uniqueid+'dashboard"></div>';
           default:
-              break;
+            info.arguments.container = uniqueid+info.type;
+            return '<div id="'+uniqueid+info.type+'></div>';
       }
   }
 

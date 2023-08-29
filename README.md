@@ -5,8 +5,8 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 [![Viewer](https://img.shields.io/badge/Viewer-v7-green.svg)](http://developer.autodesk.com/)
-[![oAuth2](https://img.shields.io/badge/oAuth2-v1-green.svg)](http://developer.autodesk.com/)
-[![Data-Management](https://img.shields.io/badge/Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
+[![oAuth2](https://img.shields.io/badge/oAuth2-v2-green.svg)](http://developer.autodesk.com/)
+[![Data-Management](https://img.shields.io/badge/Data%20Management-v2-green.svg)](http://developer.autodesk.com/)
 [![OSS](https://img.shields.io/badge/OSS-v2-green.svg)](http://developer.autodesk.com/)
 [![Model-Derivative](https://img.shields.io/badge/Model%20Derivative-v2-green.svg)](http://developer.autodesk.com/)
 
@@ -19,7 +19,7 @@ Under the hood it uses [gridstack](https://gridstackjs.com/) our other sample ht
 
 # How it works
 
-This sample is built on top of our basic [APS Tutorial](https://tutorials.autodesk.io). Unique thing about this poject is mostly in [GridStack.js](https://github.com/libvarun/APS-stacks/blob/master/public/js/GridStack.js).
+This sample is built on top of our basic [APS Tutorial](https://tutorials.autodesk.io). Unique thing about this poject is mostly in [GridStack.js](https://github.com/autodesk-platform-services/aps-stacks/blob/master/public/js/GridStack.js).
 Each stack has it's own array, which consists of basic data like default URN, defaut property, associated functions etc.
 
 # Setup
@@ -32,10 +32,10 @@ Install [NodeJS](https://nodejs.org).
 
 Clone this project or download it. It's recommended to install [GitHub Desktop](https://desktop.github.com/). To clone it via command line, use the following (**Terminal** on MacOSX/Linux, **Git Shell** on Windows):
 
-    git clone https://github.com/libvarun/APS-stacks.git
+    git clone https://github.com/autodesk-platform-services/APS-stacks.git
     
 
-To run it, have the urn ready and replace it in [GridStack.js](https://github.com/libvarun/APS-stacks/blob/master/public/js/GridStack.js#L5), install the required packages, set the enviroment variables with your client ID & Secret and finally start it. Via command line, navigate to the folder where this repository was cloned to and use the following commands:
+To run it, have the urn ready and replace it in [GridStack.js](https://github.com/autodesk-platform-services/aps-stacks/blob/master/public/js/GridStack.js#L5), install the required packages, set the enviroment variables with your client ID & Secret and finally start it. Via command line, navigate to the folder where this repository was cloned to and use the following commands:
 
 Mac OSX/Linux (Terminal)
 
@@ -53,9 +53,21 @@ Windows (use **Node.js command line** from the Start menu)
 
 Open the browser: [http://localhost:3000](http://localhost:3000).
 
+# Steps to add new stacks
+Adding a new stack is very simple, you can use the given boilerplate stack as an example.
+
+## Step 1
+Add the new stack details in the form of an object inside [stacks.json](https://github.com/autodesk-platform-services/aps-stacks/blob/master/public/js/stacks.json)
+
+## Step 2
+Create a folder inside stacks folder by your stack name and place the js files,include all the logic including creating new UI elements in these js files, then include these files in index.html file.
+
+## Step 3(Optional)
+A default container will be created for your stack, in case you want to inject html attributes, you can add your template code in [getContent](https://github.com/autodesk-platform-services/aps-stacks/blob/master/public/js/GridStack.js#L35) function's switch case.
+
 ## Packages used
 
-The [Autodesk APS](https://www.npmjs.com/package/APS-apis) packages are included by default. Some other non-Autodesk packages are used, including [express](https://www.npmjs.com/package/express) and [multer](https://www.npmjs.com/package/multer) for upload.
+The [Autodesk APS](https://www.npmjs.com/package/APS-apis) packages are included by default. Some other non-Autodesk packages are used, including [express](https://www.npmjs.com/package/express).
 
 # Tips & tricks
 
