@@ -27,7 +27,7 @@ class Dashboard {
 
     createList(categories){
         var _this = this;
-        let template = '<select id="'+_this._selectcontainer+'"'+' >';
+        let template = '<select class="box" id="'+_this._selectcontainer+'"'+' >';
         for (let index = 0; index < categories.length; index++) {
             if (categories[index] === _this._property) {
                 template += '<option selected value="'+categories[index]+'">'+categories[index]+'</option>'
