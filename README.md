@@ -1,4 +1,4 @@
-# APS-stacks
+# aps-stacks
 
 ![Node.js](https://img.shields.io/badge/node-%3E%3D%2010.0.0-brightgreen.svg)
 ![Platforms](https://img.shields.io/badge/platform-windows%20%7C%20osx%20%7C%20linux-lightgray.svg)
@@ -32,7 +32,7 @@ Install [NodeJS](https://nodejs.org).
 
 Clone this project or download it. It's recommended to install [GitHub Desktop](https://desktop.github.com/). To clone it via command line, use the following (**Terminal** on MacOSX/Linux, **Git Shell** on Windows):
 
-    git clone https://github.com/autodesk-platform-services/APS-stacks.git
+    git clone https://github.com/autodesk-platform-services/aps-stacks.git
     
 
 To run it, have the urn ready and replace it in [GridStack.js](https://github.com/autodesk-platform-services/aps-stacks/blob/master/public/js/GridStack.js#L5), install the required packages, set the enviroment variables with your client ID & Secret and finally start it. Via command line, navigate to the folder where this repository was cloned to and use the following commands:
