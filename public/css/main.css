@@ -7,7 +7,6 @@
   height: calc(100vh - 100px);
 }
 
-
 #appBuckets {
   overflow: auto;
   width: 100%;
@@ -31,7 +30,6 @@
 .menu-items{display: inline-block;}
 .navbar{background-color: aliceblue;}
 
-
 /*    Bootstrap override   */
 .btn-group{margin: 9px;}
 .vam{vertical-align: middle;}
@@ -51,8 +49,6 @@
   background-color: white;
 }
 
-
-
 #dashboard{
   overflow: auto;
   height: calc(100vh - 100px);
@@ -63,7 +59,9 @@
 }
 
 .dashboardPanel {
-  width: 100%;
+  width: 80%;
+  height: 80%;
   padding: 3%;
   display: block;
+  margin: auto;
 }

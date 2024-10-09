@@ -10,7 +10,6 @@
   "dependencies": {
     "express": "^4.16.3",
     "forge-apis": "^0.9.6",
-    "gridstack": "^3.3.0",
     "uuid": "^8.3.2"
   }
 }
