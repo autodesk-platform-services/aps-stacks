@@ -19,12 +19,28 @@ $(".addwidget").click(function(){
         if(APSStacks[index].type === type) return APSStacks[index];          
       }
   }
-    let options = { // put in gridstack options here
+    let options = { 
+      handle: '.card-header',// put in gridstack options here
     disableOneColumnMode: true, // for jfiddle small window size
     float: false
   };
+
   let grid = GridStack.init(options);  
-  
+
+  grid.on("resizestop", function(resizestop) {
+    viewer.resize();
+    let width = (resizestop.target.clientWidth)*0.95;
+    let height = (resizestop.target.clientWidth)*0.95;
+    
+    // setTimeout(() => {
+    //   $($(resizestop.target).find('.dashboardPanel')[0]).parent().css({
+    //     "height": height+"px"
+    //   })
+    // }, 100);
+    // canvas.attr("width", size);
+    // canvas.attr("height", size);
+  });
+
   addNewWidget = function (info) {
     info.node.content = getContent(info);
     grid.addWidget(info.node);
@@ -64,11 +80,18 @@ function executeFunctionByName(functionName, context /*, args */) {
     return context[func].apply(context, args);
   }
 });
+
+let chartsarr = [];
 function drawPieChart(data) {
-    new Dashboard(NOP_VIEWER, new PieChart(data.defaultproperty),data.dashboard,data.selectchart,data.defaultproperty)
+  let newPieChart = new PieChart(data.defaultproperty);
+  new Dashboard(NOP_VIEWER, newPieChart,data.dashboard,data.selectchart,data.defaultproperty)
+  chartsarr.push(newPieChart);
 }
+
 function drawBarChart(data) {
-    new Dashboard(NOP_VIEWER, new BarChart(data.defaultproperty),data.dashboard,data.selectchart,data.defaultproperty)
+  let newBarChart = new BarChart(data.defaultproperty);
+    new Dashboard(NOP_VIEWER, newBarChart,data.dashboard,data.selectchart,data.defaultproperty);
+    chartsarr.push(newBarChart);
 }
 
 let UUID = (function() {

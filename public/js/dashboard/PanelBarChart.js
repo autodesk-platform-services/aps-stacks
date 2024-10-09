@@ -33,6 +33,8 @@ class BarChart extends DashboardPanelChart {
                 }]
             },
             options: {
+                responsive:true,
+                maintainAspectRatio:true,
                 scales: {
                     yAxes: [{
                         ticks: {

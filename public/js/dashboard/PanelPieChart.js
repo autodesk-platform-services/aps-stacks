@@ -33,6 +33,8 @@ class PieChart extends DashboardPanelChart {
                 }]
             },
             options: {
+                responsive:true,
+                maintainAspectRatio:true,
                 legend: {
                     display: false
                 },
